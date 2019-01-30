@@ -15,7 +15,17 @@
             $(document).ready(function(){
                 $(":submit").click(function(e){
                     console.log("The button was clicked");
-                    // $("h3").hide();
+
+                    var request = new XMLHttpRequest();
+
+                    request.open('GET', "https://superheroapi.com/api/10218406907863622/2", true);
+                    request.onload = function () {
+                        //do something with JSON here
+                        var data = JSON.parse(this.response);
+
+                        console.log(data);
+                    }
+                    request.send();
 
 
                     //Eventually we want to load this url:
