@@ -14,34 +14,65 @@
             <script>
             $(document).ready(function(){
                 $(":submit").click(function(e){
-                
-                    console.log("The button was clicked");
 
+                    /*
                     var request = new XMLHttpRequest();
 
-                    request.open('GET', "https://superheroapi.com/api/10218406907863622/2", true);
-                    var url = 'http://api.alice.com/cors';
-                    var xhr = createCORSRequest('GET', url);
-                    xhr.send();
+                    // request.open('GET', 'https://ghibliapi.herokuapp.com/films', true);
+                    request.open('GET', 'https://superheroapi.com/api/10218406907863622/2', true);
+
+                    // var settings = {
+                    //     "async": true,
+                    //     "crossDomain": true,
+                    //     "url": "https://superheroapi.com/api/10218406907863622/2",
+                    //     "method": "GET",
+                    //     "headers": {
+                    //         "Content-Type": "application/json"
+                    //     },
+                    //     "processData": false,
+                    //     "data": ""
+                    //     }
+
+                    //     $.ajax(settings).done(function (response) {
+                    //     console.log(response);
+                    // });
+
+                    */
+
+                    var data = JSON.stringify(false);
+
+                    var xhr = new XMLHttpRequest();
+                    xhr.withCredentials = true;
+
+                    xhr.addEventListener("readystatechange", function () {
+                    if (this.readyState === 4) {
+                        console.log(this.responseText);
+                    }
+                    });
+
+                    xhr.open("GET", "https://superheroapi.com/api/10218406907863622/2");
+                    xhr.setRequestHeader("Content-Type", "application/json");
+
+                    xhr.send(data);
+
                     // request.onload = function () {
-                    //     //do something with JSON here
+                    //     //Begin accessing JSON data here
+
                     //     var data = JSON.parse(this.response);
 
-                    //     console.log(data);
+                    //     if (request.status >= 200 && request.status < 400) {
+                    //         data.forEach(movie=> {
+                    //             console.log(movie.title);
+                    //         });
+                    //     } else {
+                    //         console.log('error');
+                    //     }
                     // }
-
-                    xhr.onload = function () {
-                        //do something with JSON here
-                        var data = JSON.parse(this.response);
-
-                        console.log(data);
-                    }
-                    request.send();
+                    // request.send();
                     e.preventDefault();
 
                 });
-
-                });
+            });
             
 
 
