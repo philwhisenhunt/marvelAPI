@@ -14,6 +14,7 @@
             <script>
             $(document).ready(function(){
                 $(":submit").click(function(e){
+                
                     console.log("The button was clicked");
 
                     var request = new XMLHttpRequest();
@@ -35,14 +36,20 @@
 
                         console.log(data);
                     }
-                    // request.send();
+                    request.send();
+                    e.preventDefault();
+
+                });
+
+                });
+            
 
 
                     //Eventually we want to load this url:
                     // $(".characterDisplayer").load("https://superheroapi.com/api/10218406907863622/2");
-                    e.preventDefault();
-                });
-            });
+
+                    // Create the XHR object.
+                    
             </script>
 
         <form action="" method="GET">
