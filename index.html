@@ -19,13 +19,23 @@
                     var request = new XMLHttpRequest();
 
                     request.open('GET', "https://superheroapi.com/api/10218406907863622/2", true);
-                    request.onload = function () {
+                    var url = 'http://api.alice.com/cors';
+                    var xhr = createCORSRequest('GET', url);
+                    xhr.send();
+                    // request.onload = function () {
+                    //     //do something with JSON here
+                    //     var data = JSON.parse(this.response);
+
+                    //     console.log(data);
+                    // }
+
+                    xhr.onload = function () {
                         //do something with JSON here
                         var data = JSON.parse(this.response);
 
                         console.log(data);
                     }
-                    request.send();
+                    // request.send();
 
 
                     //Eventually we want to load this url:
