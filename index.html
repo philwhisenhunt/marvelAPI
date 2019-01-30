@@ -15,71 +15,36 @@
             $(document).ready(function(){
                 $(":submit").click(function(e){
 
-                    /*
+                    
                     var request = new XMLHttpRequest();
 
-                    // request.open('GET', 'https://ghibliapi.herokuapp.com/films', true);
-                    request.open('GET', 'https://superheroapi.com/api/10218406907863622/2', true);
+                    request.open('GET', 'https://ghibliapi.herokuapp.com/films', true);
+                    // request.open('GET', 'https://api.darksky.net/forecast/33f04cae19d269f690b892deaa90f918/37.8267,-122.4233', true);
 
-                    // var settings = {
-                    //     "async": true,
-                    //     "crossDomain": true,
-                    //     "url": "https://superheroapi.com/api/10218406907863622/2",
-                    //     "method": "GET",
-                    //     "headers": {
-                    //         "Content-Type": "application/json"
-                    //     },
-                    //     "processData": false,
-                    //     "data": ""
-                    //     }
+                    // request.open('GET', 'https://superheroapi.com/api/10218406907863622/2', true);
 
-                    //     $.ajax(settings).done(function (response) {
-                    //     console.log(response);
-                    // });
 
-                    */
+                  
 
-                    var data = JSON.stringify(false);
+                    request.onload = function () {
+                        //Begin accessing JSON data here
 
-                    var xhr = new XMLHttpRequest();
-                    xhr.withCredentials = true;
+                        var data = JSON.parse(this.response);
 
-                    xhr.addEventListener("readystatechange", function () {
-                    if (this.readyState === 4) {
-                        console.log(this.responseText);
+                        if (request.status >= 200 && request.status < 400) {
+                            data.forEach(movie=> {
+                                console.log(movie.title);
+                            });
+                        } else {
+                            console.log('error');
+                        }
                     }
-                    });
-
-                    xhr.open("GET", "https://superheroapi.com/api/10218406907863622/2");
-                    xhr.setRequestHeader("Content-Type", "application/json");
-
-                    xhr.send(data);
-
-                    // request.onload = function () {
-                    //     //Begin accessing JSON data here
-
-                    //     var data = JSON.parse(this.response);
-
-                    //     if (request.status >= 200 && request.status < 400) {
-                    //         data.forEach(movie=> {
-                    //             console.log(movie.title);
-                    //         });
-                    //     } else {
-                    //         console.log('error');
-                    //     }
-                    // }
-                    // request.send();
+                    request.send();
                     e.preventDefault();
 
                 });
             });
             
-
-
-                    //Eventually we want to load this url:
-                    // $(".characterDisplayer").load("https://superheroapi.com/api/10218406907863622/2");
-
-                    // Create the XHR object.
                     
             </script>
 
