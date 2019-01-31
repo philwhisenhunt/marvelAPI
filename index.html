@@ -13,10 +13,12 @@
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script>
             $(document).ready(function(){
-                // $(":submit").click(function(e){
+                $(":submit").click(function(e){
 
                     
                     var request = new XMLHttpRequest();
+                    var numbah = $("#superheroForm").val();
+                    console.log("The number is: " + numbah);
 
                     // request.open('GET', 'https://ghibliapi.herokuapp.com/films', true);
                     // request.open('GET', 'https://api.darksky.net/forecast/33f04cae19d269f690b892deaa90f918/37.8267,-122.4233', true);
@@ -52,7 +54,7 @@
                     // request.send();
                     // e.preventDefault();
 
-                // });
+                });
             });
             
                     
@@ -60,7 +62,7 @@
 
         <form action="" method="GET">
             <h3>Type a superhero: </h3>
-            <input type="text" name="superhero">
+            <input type="text" name="form" id="superheroForm">
 
             <button type="Submit" class="submitButton">Submit</button>
 

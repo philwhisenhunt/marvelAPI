@@ -1,8 +1,8 @@
 <?php
 
 
-// $nowInPHP = $_GET["data"];
-$nowInPHP = "2";
+$nowInPHP = $_GET["data"];
+// $nowInPHP = "2";
 $baseURL = "https://superheroapi.com/api.php/10218406907863622/";
 $combo = $baseURL . $nowInPHP;
 echo 'The combo is ' . $combo;
@@ -14,8 +14,7 @@ $curl = curl_init();
 
 curl_setopt_array($curl, array(
 //   CURLOPT_URL => 'https://superheroapi.com/api.php/10218406907863622/2',
-CURLOPT_URL => $combo,
-
+  CURLOPT_URL => $combo,
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
