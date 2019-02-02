@@ -29,9 +29,11 @@
                         
                         url: "index2.php",
                         type: 'get',
-                        data: '2',
+                        data: 'theData=' + numbah,
                         success: function(response){    
+                            //currently the response is all the data, so examine here or in the php file?
                             console.log(response);
+                            $(".characterDisplayer").html(response);
                         }
                     });
 
@@ -52,7 +54,7 @@
                     //     }
                     // }
                     // request.send();
-                    // e.preventDefault();
+                    e.preventDefault();
 
                 });
             });

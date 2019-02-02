@@ -1,7 +1,7 @@
 <?php
 
 
-$nowInPHP = $_GET["data"];
+$nowInPHP = $_GET["theData"];
 // $nowInPHP = "2";
 $baseURL = "https://superheroapi.com/api.php/10218406907863622/";
 $combo = $baseURL . $nowInPHP;
