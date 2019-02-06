@@ -4,6 +4,8 @@
 $nowInPHP = $_GET["theData"];
 // $nowInPHP = "2";
 $baseURL = "https://superheroapi.com/api.php/10218406907863622/";
+$baseURL = "https://api.darksky.net/forecast/33f04cae19d269f690b892deaa90f918/37.8267,-122.4233";
+
 $combo = $baseURL . $nowInPHP;
 echo 'The combo is ' . $combo;
 
@@ -28,7 +30,7 @@ curl_setopt_array($curl, array(
 ));
 
 $response = curl_exec($curl);
-$response = json_decode($response);
+// $response = json_decode($response);
 
 $err = curl_error($curl);
 
