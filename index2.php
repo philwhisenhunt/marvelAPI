@@ -3,8 +3,11 @@
 
 $nowInPHP = $_GET["theData"];
 // $nowInPHP = "2";
-$baseURL = "https://superheroapi.com/api.php/10218406907863622/";
-$baseURL = "https://api.darksky.net/forecast/33f04cae19d269f690b892deaa90f918/37.8267,-122.4233";
+// $baseURL = "https://superheroapi.com/api.php/10218406907863622/";
+// $baseURL = "https://api.darksky.net/forecast/33f04cae19d269f690b892deaa90f918/37.8267,-122.4233";
+//Use 37.8267,-122.4233" as input
+$baseURL = "https://api.darksky.net/forecast/33f04cae19d269f690b892deaa90f918/";
+
 
 $combo = $baseURL . $nowInPHP;
 echo 'The combo is ' . $combo;
