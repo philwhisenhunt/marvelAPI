@@ -39,7 +39,7 @@ $response = json_decode($response, true);
 
 $timezone = $response['timezone'];
 $summary = $response['currently']['summary'];
-
+$temp = $response['currently']['temperature'];
 
 $err = curl_error($curl);
 
@@ -50,8 +50,9 @@ if ($err) {
 } else {
  // echo 'The timezone is: ' .$timezone;
 
- echo "It is currently " ;
+ echo "It is currently ";
  print_r($summary);
- echo " in " . $timezone;
-  // var_dump( $response);
+ echo " in " . $timezone . ". ";
+ echo 'The temperature is: ' . $temp . ". ";
+//var_dump( $response);
 }

@@ -17,8 +17,8 @@
 
                     
                     // var request = new XMLHttpRequest();
-                    var numbah = $("#superheroForm").val();
-                    console.log("The number is: " + numbah);
+                    var latLong = $("#superheroForm").val();
+                    console.log("The location is: " + latLong);
 
                     // request.open('GET', 'https://ghibliapi.herokuapp.com/films', true);
                     // request.open('GET', 'https://api.darksky.net/forecast/33f04cae19d269f690b892deaa90f918/37.8267,-122.4233', true);
@@ -29,7 +29,7 @@
                         
                         url: "index2.php",
                         type: 'get',
-                        data: 'theData=' + numbah,
+                        data: 'theData=' + latLong,
                         success: function(response){    
                            
                             $(".characterDisplayer").html(response);
@@ -45,7 +45,8 @@
             </script>
 
         <form action="" method="GET">
-            <h3>Type a superhero: </h3>
+            <h3>Type a longitude and latitude: </h3>
+            <h5>Example: 37.8267,-122.4233</h5>
             <input type="text" name="form" id="superheroForm">
 
             <button type="Submit" class="submitButton">Submit</button>
