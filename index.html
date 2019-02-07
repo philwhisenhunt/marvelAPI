@@ -33,7 +33,8 @@
                         success: function(response){    
                             //currently the response is all the data, so examine here or in the php file?
                             console.log("The response received is: " + response);
-                            response = JSON.parse(response);
+                            //taking this line out got things to display.. why?
+                            // response = JSON.parse(response);
                             $(".characterDisplayer").html(response);
                         }
                     });
