@@ -10,7 +10,7 @@ $baseURL = "https://api.darksky.net/forecast/33f04cae19d269f690b892deaa90f918/";
 
 
 $combo = $baseURL . $nowInPHP;
-echo 'The combo is ' . $combo;
+// echo 'The combo is ' . $combo;
 
 
 $curl = curl_init();
@@ -33,9 +33,11 @@ curl_setopt_array($curl, array(
 ));
 
 $response = curl_exec($curl);
-// $response = json_decode($response);
+$response = json_decode($response, true);
 
 //how to pick apart what is in the curl here?
+
+$timezone = $response['timezone'];
 
 $err = curl_error($curl);
 
@@ -44,5 +46,5 @@ curl_close($curl);
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
-  echo $response;
+  echo 'The timezone is: ' .$timezone;
 }
