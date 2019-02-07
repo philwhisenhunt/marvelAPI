@@ -38,6 +38,8 @@ $response = json_decode($response, true);
 //how to pick apart what is in the curl here?
 
 $timezone = $response['timezone'];
+$summary = $response['currently']['summary'];
+
 
 $err = curl_error($curl);
 
@@ -46,5 +48,10 @@ curl_close($curl);
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
-  echo 'The timezone is: ' .$timezone;
+ // echo 'The timezone is: ' .$timezone;
+
+ echo "It is currently " ;
+ print_r($summary);
+ echo " in " . $timezone;
+  // var_dump( $response);
 }

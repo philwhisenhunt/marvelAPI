@@ -16,7 +16,7 @@
                 $(":submit").click(function(e){
 
                     
-                    var request = new XMLHttpRequest();
+                    // var request = new XMLHttpRequest();
                     var numbah = $("#superheroForm").val();
                     console.log("The number is: " + numbah);
 
@@ -31,32 +31,11 @@
                         type: 'get',
                         data: 'theData=' + numbah,
                         success: function(response){    
-                            //currently the response is all the data, so examine here or in the php file?
-                            // console.log("The response received is: " + response);
-                            //taking this line out got things to display.. why?
-                            // response = JSON.parse(response);
-                            // varName = response["timezone"];
+                           
                             $(".characterDisplayer").html(response);
                         }
                     });
 
-
-                  
-
-                    // request.onload = function () {
-                    //     //Begin accessing JSON data here
-
-                    //     var data = JSON.parse(this.response);
-
-                    //     if (request.status >= 200 && request.status < 400) {
-                    //         data.forEach(movie=> {
-                    //             console.log(movie.title);
-                    //         });
-                    //     } else {
-                    //         console.log('error');
-                    //     }
-                    // }
-                    // request.send();
                     e.preventDefault();
 
                 });
