@@ -12,20 +12,30 @@
 
         <script>
 
-            var dataPiece = ("#nameOfID").val();
+            $(document).ready(function(){
+                $(":submit"),click(function(e){
+                    var dataPiece = ("#nameOfID").val();
 
-            $.ajax({
-                url: "index2.php",
-                type: "GET",
-                data: "theData=" + dataPiece,
-                success: function(response){
-                    $("#outputArea").html(response);
-                }
-            })
+                    $.ajax({
+                        url: "index2.php",
+                        type: "GET",
+                        data: "theData=" + dataPiece,
+                        success: function(response){
+                            $("#outputArea").html(response);
+                        }
+                    });
+
+                });
+            });
+
+           
         
         
         
         </script>
+
+        <input type="text" id="nameOfID">
+        <button type=submit></button>
 
         
         <script src="" async defer></script>
