@@ -15,7 +15,12 @@
             var dataPiece = ("#nameOfID").val();
 
             $.ajax({
-                
+                url: "index2.php",
+                type: "GET",
+                data: "theData=" + dataPiece,
+                success: function(response){
+                    $("#outputArea").html(response);
+                }
             })
         
         
